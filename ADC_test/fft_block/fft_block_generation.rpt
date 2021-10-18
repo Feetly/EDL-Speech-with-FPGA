@@ -1,0 +1,36 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "F:\Academic\Semester 7\EDL\ADC_test\fft_block.qsys" --block-symbol-file --output-directory="F:\Academic\Semester 7\EDL\ADC_test\fft_block" --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading ADC_test/fft_block.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 20.1]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: fft_block.fft_ii_0: Radix-2 digit reverse implied
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "F:\Academic\Semester 7\EDL\ADC_test\fft_block.qsys" --synthesis=VHDL --output-directory="F:\Academic\Semester 7\EDL\ADC_test\fft_block\synthesis" --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading ADC_test/fft_block.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 20.1]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: fft_block.fft_ii_0: Radix-2 digit reverse implied
+Info: fft_block: Generating fft_block "fft_block" for QUARTUS_SYNTH
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twr2.hex
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twi3.hex
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twr3.hex
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twi1.hex
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twi2.hex
+Info: fft_ii_0: --- add file: fft_block_fft_ii_0_opt_twr1.hex
+Info: fft_ii_0: "fft_block" instantiated altera_fft_ii "fft_ii_0"
+Info: fft_block: Done "fft_block" with 2 modules, 48 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

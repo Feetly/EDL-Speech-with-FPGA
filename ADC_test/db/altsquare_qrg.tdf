@@ -1,0 +1,405 @@
+--altsquare CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DATA_WIDTH=8 DEVICE_FAMILY="Cyclone V" PIPELINE=1 REPRESENTATION="UNSIGNED" RESULT_ALIGNMENT="MSB" RESULT_WIDTH=16 clock data result
+--VERSION_BEGIN 20.1 cbx_altsquare 2020:11:11:17:06:45:SJ cbx_cycloneii 2020:11:11:17:06:45:SJ cbx_lpm_add_sub 2020:11:11:17:06:45:SJ cbx_mgl 2020:11:11:17:08:38:SJ cbx_nadder 2020:11:11:17:06:46:SJ cbx_padd 2020:11:11:17:06:46:SJ cbx_stratix 2020:11:11:17:06:46:SJ cbx_stratixii 2020:11:11:17:06:46:SJ cbx_util_mgl 2020:11:11:17:06:46:SJ  VERSION_END
+
+
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION soft (in)
+RETURNS ( out);
+
+--synthesis_resources = lut 40 reg 34 
+OPTIONS ALTERA_INTERNAL_OPTION = "{-to dffe10} POWER_UP_LEVEL=LOW;{-to dffe11} POWER_UP_LEVEL=LOW;{-to dffe12} POWER_UP_LEVEL=LOW;{-to dffe13} POWER_UP_LEVEL=LOW;{-to dffe14} POWER_UP_LEVEL=LOW;{-to dffe15} POWER_UP_LEVEL=LOW;{-to dffe16} POWER_UP_LEVEL=LOW;{-to dffe17} POWER_UP_LEVEL=LOW;{-to dffe18} POWER_UP_LEVEL=LOW;{-to dffe19} POWER_UP_LEVEL=LOW;{-to dffe2} POWER_UP_LEVEL=LOW;{-to dffe20} POWER_UP_LEVEL=LOW;{-to dffe21} POWER_UP_LEVEL=LOW;{-to dffe22} POWER_UP_LEVEL=LOW;{-to dffe23} POWER_UP_LEVEL=LOW;{-to dffe24} POWER_UP_LEVEL=LOW;{-to dffe25} POWER_UP_LEVEL=LOW;{-to dffe26} POWER_UP_LEVEL=LOW;{-to dffe27} POWER_UP_LEVEL=LOW;{-to dffe28} POWER_UP_LEVEL=LOW;{-to dffe29} POWER_UP_LEVEL=LOW;{-to dffe3} POWER_UP_LEVEL=LOW;{-to dffe30} POWER_UP_LEVEL=LOW;{-to dffe31} POWER_UP_LEVEL=LOW;{-to dffe32} POWER_UP_LEVEL=LOW;{-to dffe33} POWER_UP_LEVEL=LOW;{-to dffe34} POWER_UP_LEVEL=LOW;{-to dffe4} POWER_UP_LEVEL=LOW;{-to dffe5} POWER_UP_LEVEL=LOW;{-to dffe6} POWER_UP_LEVEL=LOW;{-to dffe7} POWER_UP_LEVEL=LOW;{-to dffe8} POWER_UP_LEVEL=LOW;{-to dffe9} POWER_UP_LEVEL=LOW";
+
+SUBDESIGN altsquare_qrg
+( 
+	clock	:	input;
+	data[7..0]	:	input;
+	result[15..0]	:	output;
+) 
+VARIABLE
+	add35_result[13..0]	:	WIRE;
+	add40_result[5..0]	:	WIRE;
+	dffe10 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe11 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe12 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe13 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe14 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe15 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe16 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe17 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe18 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe19 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe1a[0..0] : dffe;
+	dffe2 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe20 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe21 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe22 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe23 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe24 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe25 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe26 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe27 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe28 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe29 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe3 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe30 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe31 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe32 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe33 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe34 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe4 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe5 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe6 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe7 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe8 : dffe
+		WITH (
+			power_up = "low"
+		);
+	dffe9 : dffe
+		WITH (
+			power_up = "low"
+		);
+	sft36a[13..0] : soft;
+	sft37a[13..0] : soft;
+	sft38a[13..0] : soft;
+	sft39a[13..0] : soft;
+	sft41a[5..0] : soft;
+	sft42a[5..0] : soft;
+	sft43a[5..0] : soft;
+	sft44a[5..0] : soft;
+	aclr	: NODE;
+	ena	: NODE;
+	w100w[0..0]	: WIRE;
+	w103w[0..0]	: WIRE;
+	w108w[0..0]	: WIRE;
+	w112w[0..0]	: WIRE;
+	w116w[0..0]	: WIRE;
+	w120w[0..0]	: WIRE;
+	w124w[0..0]	: WIRE;
+	w127w[0..0]	: WIRE;
+	w12w[0..0]	: WIRE;
+	w130w[0..0]	: WIRE;
+	w133w[0..0]	: WIRE;
+	w138w[0..0]	: WIRE;
+	w142w[0..0]	: WIRE;
+	w148w	: WIRE;
+	w16w[0..0]	: WIRE;
+	w20w[0..0]	: WIRE;
+	w223w[16..0]	: WIRE;
+	w25w[0..0]	: WIRE;
+	w29w[0..0]	: WIRE;
+	w33w[0..0]	: WIRE;
+	w36w[0..0]	: WIRE;
+	w41w[0..0]	: WIRE;
+	w45w[0..0]	: WIRE;
+	w49w[0..0]	: WIRE;
+	w52w[0..0]	: WIRE;
+	w55w[0..0]	: WIRE;
+	w60w[0..0]	: WIRE;
+	w64w[0..0]	: WIRE;
+	w68w[0..0]	: WIRE;
+	w71w[0..0]	: WIRE;
+	w74w[0..0]	: WIRE;
+	w77w[0..0]	: WIRE;
+	w82w[0..0]	: WIRE;
+	w86w[0..0]	: WIRE;
+	w90w[0..0]	: WIRE;
+	w94w[0..0]	: WIRE;
+	w97w[0..0]	: WIRE;
+
+BEGIN 
+	add35_result[] = sft36a[].out + sft37a[].out + sft38a[].out;
+	add40_result[] = sft41a[].out + sft42a[].out + sft43a[].out;
+	dffe10.clk = clock;
+	dffe10.clrn = (! aclr);
+	dffe10.d = w41w[0..0];
+	dffe10.ena = ena;
+	dffe11.clk = clock;
+	dffe11.clrn = (! aclr);
+	dffe11.d = w52w[0..0];
+	dffe11.ena = ena;
+	dffe12.clk = clock;
+	dffe12.clrn = (! aclr);
+	dffe12.d = w68w[0..0];
+	dffe12.ena = ena;
+	dffe13.clk = clock;
+	dffe13.clrn = (! aclr);
+	dffe13.d = w45w[0..0];
+	dffe13.ena = ena;
+	dffe14.clk = clock;
+	dffe14.clrn = (! aclr);
+	dffe14.d = w55w[0..0];
+	dffe14.ena = ena;
+	dffe15.clk = clock;
+	dffe15.clrn = (! aclr);
+	dffe15.d = sft44a[0..0].out;
+	dffe15.ena = ena;
+	dffe16.clk = clock;
+	dffe16.clrn = (! aclr);
+	dffe16.d = w60w[0..0];
+	dffe16.ena = ena;
+	dffe17.clk = clock;
+	dffe17.clrn = (! aclr);
+	dffe17.d = w74w[0..0];
+	dffe17.ena = ena;
+	dffe18.clk = clock;
+	dffe18.clrn = (! aclr);
+	dffe18.d = sft44a[1..1].out;
+	dffe18.ena = ena;
+	dffe19.clk = clock;
+	dffe19.clrn = (! aclr);
+	dffe19.d = w64w[0..0];
+	dffe19.ena = ena;
+	dffe1a[].clk = clock;
+	dffe1a[].clrn = (! aclr);
+	dffe1a[].d = ( data[0..0]);
+	dffe1a[].ena = ena;
+	dffe2.clk = clock;
+	dffe2.clrn = (! aclr);
+	dffe2.d = w12w[0..0];
+	dffe2.ena = ena;
+	dffe20.clk = clock;
+	dffe20.clrn = (! aclr);
+	dffe20.d = w77w[0..0];
+	dffe20.ena = ena;
+	dffe21.clk = clock;
+	dffe21.clrn = (! aclr);
+	dffe21.d = sft44a[2..2].out;
+	dffe21.ena = ena;
+	dffe22.clk = clock;
+	dffe22.clrn = (! aclr);
+	dffe22.d = w124w[0..0];
+	dffe22.ena = ena;
+	dffe23.clk = clock;
+	dffe23.clrn = (! aclr);
+	dffe23.d = w100w[0..0];
+	dffe23.ena = ena;
+	dffe24.clk = clock;
+	dffe24.clrn = (! aclr);
+	dffe24.d = sft44a[3..3].out;
+	dffe24.ena = ena;
+	dffe25.clk = clock;
+	dffe25.clrn = (! aclr);
+	dffe25.d = w127w[0..0];
+	dffe25.ena = ena;
+	dffe26.clk = clock;
+	dffe26.clrn = (! aclr);
+	dffe26.d = w103w[0..0];
+	dffe26.ena = ena;
+	dffe27.clk = clock;
+	dffe27.clrn = (! aclr);
+	dffe27.d = sft44a[4..4].out;
+	dffe27.ena = ena;
+	dffe28.clk = clock;
+	dffe28.clrn = (! aclr);
+	dffe28.d = w108w[0..0];
+	dffe28.ena = ena;
+	dffe29.clk = clock;
+	dffe29.clrn = (! aclr);
+	dffe29.d = w130w[0..0];
+	dffe29.ena = ena;
+	dffe3.clk = clock;
+	dffe3.clrn = (! aclr);
+	dffe3.d = w16w[0..0];
+	dffe3.ena = ena;
+	dffe30.clk = clock;
+	dffe30.clrn = (! aclr);
+	dffe30.d = sft44a[5..5].out;
+	dffe30.ena = ena;
+	dffe31.clk = clock;
+	dffe31.clrn = (! aclr);
+	dffe31.d = w112w[0..0];
+	dffe31.ena = ena;
+	dffe32.clk = clock;
+	dffe32.clrn = (! aclr);
+	dffe32.d = w133w[0..0];
+	dffe32.ena = ena;
+	dffe33.clk = clock;
+	dffe33.clrn = (! aclr);
+	dffe33.d = w138w[0..0];
+	dffe33.ena = ena;
+	dffe34.clk = clock;
+	dffe34.clrn = (! aclr);
+	dffe34.d = w142w[0..0];
+	dffe34.ena = ena;
+	dffe4.clk = clock;
+	dffe4.clrn = (! aclr);
+	dffe4.d = w20w[0..0];
+	dffe4.ena = ena;
+	dffe5.clk = clock;
+	dffe5.clrn = (! aclr);
+	dffe5.d = w25w[0..0];
+	dffe5.ena = ena;
+	dffe6.clk = clock;
+	dffe6.clrn = (! aclr);
+	dffe6.d = w33w[0..0];
+	dffe6.ena = ena;
+	dffe7.clk = clock;
+	dffe7.clrn = (! aclr);
+	dffe7.d = w29w[0..0];
+	dffe7.ena = ena;
+	dffe8.clk = clock;
+	dffe8.clrn = (! aclr);
+	dffe8.d = w36w[0..0];
+	dffe8.ena = ena;
+	dffe9.clk = clock;
+	dffe9.clrn = (! aclr);
+	dffe9.d = w49w[0..0];
+	dffe9.ena = ena;
+	sft36a[].in = ( w148w, ( dffe34.q, ( dffe33.q, ( dffe31.q, ( dffe28.q, ( dffe25.q, ( dffe22.q, ( dffe19.q, ( dffe16.q, ( dffe13.q, ( dffe10.q, ( dffe7.q, ( dffe5.q, dffe3.q)))))))))))));
+	sft37a[].in = ( w148w, ( w148w, ( w148w, ( dffe32.q, ( dffe29.q, ( dffe26.q, ( dffe23.q, ( dffe20.q, ( dffe17.q, ( dffe14.q, ( dffe11.q, ( dffe8.q, ( dffe6.q, dffe4.q)))))))))))));
+	sft38a[].in = ( w148w, ( w148w, ( w148w, ( w148w, ( dffe30.q, ( dffe27.q, ( dffe24.q, ( dffe21.q, ( dffe18.q, ( dffe15.q, ( dffe12.q, ( dffe9.q, ( w148w, w148w)))))))))))));
+	sft39a[].in = add35_result[];
+	sft41a[].in = ( w148w, ( w86w[0..0], ( w82w[0..0], ( w120w[0..0], ( w116w[0..0], w90w[0..0])))));
+	sft42a[].in = ( w148w, ( w148w, ( w148w, ( w97w[0..0], ( w94w[0..0], w71w[0..0])))));
+	sft43a[].in = ( w148w, ( w148w, ( w148w, ( w148w, ( w148w, w148w)))));
+	sft44a[].in = add40_result[];
+	aclr = GND;
+	ena = VCC;
+	result[] = ( w223w[15..2], B"0", dffe1a[0].q);
+	w100w[] = (data[6..6] & data[3..3]);
+	w103w[] = (data[6..6] & data[4..4]);
+	w108w[] = (data[6..6] & (! data[5..5]));
+	w112w[] = (data[6..6] & data[5..5]);
+	w116w[] = (data[7..7] & data[0..0]);
+	w120w[] = (data[7..7] & data[1..1]);
+	w124w[] = (data[7..7] & data[2..2]);
+	w127w[] = (data[7..7] & data[3..3]);
+	w12w[] = (data[1..1] & (! data[0..0]));
+	w130w[] = (data[7..7] & data[4..4]);
+	w133w[] = (data[7..7] & data[5..5]);
+	w138w[] = (data[7..7] & (! data[6..6]));
+	w142w[] = (data[7..7] & data[6..6]);
+	w148w = B"0";
+	w16w[] = (data[1..1] & data[0..0]);
+	w20w[] = (data[2..2] & data[0..0]);
+	w223w[] = ( sft39a[13..12].out, sft39a[11..10].out, sft39a[9..8].out, sft39a[7..6].out, sft39a[5..4].out, sft39a[3..2].out, sft39a[1..0].out, dffe2.q, w148w, w148w);
+	w25w[] = (data[2..2] & (! data[1..1]));
+	w29w[] = (data[2..2] & data[1..1]);
+	w33w[] = (data[3..3] & data[0..0]);
+	w36w[] = (data[3..3] & data[1..1]);
+	w41w[] = (data[3..3] & (! data[2..2]));
+	w45w[] = (data[3..3] & data[2..2]);
+	w49w[] = (data[4..4] & data[0..0]);
+	w52w[] = (data[4..4] & data[1..1]);
+	w55w[] = (data[4..4] & data[2..2]);
+	w60w[] = (data[4..4] & (! data[3..3]));
+	w64w[] = (data[4..4] & data[3..3]);
+	w68w[] = (data[5..5] & data[0..0]);
+	w71w[] = (data[5..5] & data[1..1]);
+	w74w[] = (data[5..5] & data[2..2]);
+	w77w[] = (data[5..5] & data[3..3]);
+	w82w[] = (data[5..5] & (! data[4..4]));
+	w86w[] = (data[5..5] & data[4..4]);
+	w90w[] = (data[6..6] & data[0..0]);
+	w94w[] = (data[6..6] & data[1..1]);
+	w97w[] = (data[6..6] & data[2..2]);
+END;
+--VALID FILE
